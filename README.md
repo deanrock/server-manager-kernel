@@ -4,16 +4,11 @@ Docker file for building Wheezy kernel for server-manager
 
 Steps:
 
-    # build image and start the container
+    # build image
     docker build -t kernel .
-    docker run -it kernel bash
 
-    # inside the container
-    fakeroot make-kpkg --initrd kernel_image kernel_headers -j 8
-    exit
-
-    # copy files
-
+    # or build directly via build.sh script
+    ./build.sh
 
     # upload to s3 apt repo
     # (you can install deb-s3 via gem install deb-s3)

@@ -42,7 +42,7 @@ patch -p1 < $aufs_src/aufs4-standalone.patch
 
 cp -av $aufs_src/Documentation/* Documentation/
 cp -av $aufs_src/fs/* fs/
-cp -v $aufs_src/include/uapi/linux/aufs_type.h $linux_src/include/linux/
+cp -v $aufs_src/include/uapi/linux/aufs_type.h $linux_src/include/uapi/linux/
 
 # cd to linux dir build it
 cd $linux_src
