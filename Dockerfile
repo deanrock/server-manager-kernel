@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:wheezy
 
 RUN apt-get update && apt-get install -y git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc kernel-package
 RUN apt-get install -y wget
@@ -17,5 +17,3 @@ ADD config-3.19.0-5-exton /code/linux-4.9/.config
 WORKDIR /code/linux-4.9
 RUN make-kpkg clean
 CMD bash
-
-# fakeroot make-kpkg --initrd kernel_image kernel_headers -j 8
